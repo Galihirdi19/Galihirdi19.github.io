@@ -13,3 +13,11 @@ body {
 .navbar .nav-link {
   color: #fff !important;
 }
+
+.uniform-img {
+  width: 100%; /* Gambar menyesuaikan lebar kartu */
+  height: auto; /* Tinggi gambar menyesuaikan agar proporsional */
+  max-height: 300px; /* Batasi tinggi maksimum (opsional) */
+  object-fit: cover; /* Potong gambar jika tidak sesuai proporsi */
+  border-radius: 5px; /* Opsional, efek sudut membulat */
+}
