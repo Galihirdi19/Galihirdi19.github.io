@@ -92,10 +92,18 @@
             <br />
           </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row d-flex justify-content-center flex-wrap">
           <div class="col-md-4 mb-3">
             <div class="card">
-              <img src="img/starlink.png" class="card-img-top" alt="foto1" />
+              <img src="img/project_2.jpg" class="card-img-top uniform-img" alt="foto1" />
+              <div class="card-body">
+                <p class="card-text">Installation setup and mounting Switch Aruba CX 6000 Series, and switching inter vlan trunking at PT. Penerbit Erlangga.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/starlink.png" class="card-img-top uniform-img" alt="foto2" />
               <div class="card-body">
                 <p class="card-text">Starlink device installation and setup project at PT. Penerbit Erlangga.</p>
               </div>
@@ -112,31 +120,31 @@
       </svg>
     </section>
     <!-- Akhir Project & Skills -->
-          
+
     <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <div class="row text-center width">
+        <div class="row text-center">
           <div class="col">
             <h2>Contact Me</h2>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-8">
-            <form>
+            <form onsubmit="sendEmail(event)">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" />
+                <input type="text" class="form-control" id="name" required />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
+                <input type="email" class="form-control" id="email" required />
               </div>
               <div class="mb-3">
-                <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="message" class="form-label">Pesan</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
               </div>
-              <button type="kirim" class="btn btn-primary">Kirim</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
             </form>
           </div>
         </div>
@@ -152,5 +160,24 @@
     </footer>
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+      function sendEmail(event) {
+        event.preventDefault(); // Mencegah form refresh halaman
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Format URL Gmail
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=galih.irdianto19@gmail.com&su=Pesan dari ${encodeURIComponent(name)}&body=Nama: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(
+          email
+        )}%0APesan:%0A${encodeURIComponent(message)}`;
+
+        // Membuka Gmail di tab baru
+        window.open(gmailLink, "_blank");
+      }
+    </script>
   </body>
 </html>
+
